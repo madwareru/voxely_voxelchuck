@@ -1,0 +1,7 @@
+[package]
+name = "voxely_voxelchuk"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+retro-blit = { git = "https://github.com/madwareru/retro-blit", version = "0.1.9" }
