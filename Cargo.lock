@@ -47,6 +47,18 @@ dependencies = [
 ]
 
 [[package]]
+name = "alkahest"
+version = "0.3.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "d3afb453d344e42ba592019bb80778e8c0a4976c4f4986e0dba6a0ae7d5a9616"
+
+[[package]]
+name = "allocator-api2"
+version = "0.2.18"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "5c6cb57a04249c6480766f7f7cef5467412af1490f8d1e243141daddada3264f"
+
+[[package]]
 name = "alsa"
 version = "0.6.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -69,6 +81,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "amity"
+version = "0.2.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "dcc3da17cccc770f4194bcd1b87a6dd6694ea9c3f591958e553a86e42e6f3690"
+dependencies = [
+ "lock_api",
+]
+
+[[package]]
 name = "arrayvec"
 version = "0.5.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -79,6 +100,12 @@ name = "atomic_refcell"
 version = "0.1.13"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "41e67cd8309bbd06cd603a9e693a784ac2e5d1e955f11286e355089fcab3047c"
+
+[[package]]
+name = "atomicell"
+version = "0.2.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "bf53d6c43ea3fa42a5d18d6060081bcfddeca7c63faa64e65a59c4372bbe173b"
 
 [[package]]
 name = "autocfg"
@@ -384,6 +411,47 @@ dependencies = [
 ]
 
 [[package]]
+name = "edict"
+version = "1.0.0-rc6"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "3d2ae4f27e2fb2bc895ef549e392266237ebbb03ac2819c3b0e25b017cac6208"
+dependencies = [
+ "alkahest",
+ "amity",
+ "atomicell",
+ "edict-proc",
+ "hashbrown",
+ "lock_api",
+ "parking_lot 0.12.3",
+ "serde",
+ "slab",
+ "smallvec",
+ "tiny-fn",
+]
+
+[[package]]
+name = "edict-proc"
+version = "1.0.0-rc6"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "93e23bc01eadd502815bb8dd12fb46dd04249f7722b16b04b864b5cd7439e031"
+dependencies = [
+ "edict-proc-lib",
+ "syn 2.0.72",
+]
+
+[[package]]
+name = "edict-proc-lib"
+version = "1.0.0-rc6"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "a8991e7aba9bac77a53dfe508e97db3b7c4998d5e47e1653d34da62f488a3a38"
+dependencies = [
+ "proc-easy",
+ "proc-macro2",
+ "quote",
+ "syn 2.0.72",
+]
+
+[[package]]
 name = "egui"
 version = "0.19.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -578,6 +646,10 @@ name = "hashbrown"
 version = "0.14.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "e5274423e17b7c9fc20b6e7e208532f9b19825d82dfd615708b70edd83df41f1"
+dependencies = [
+ "ahash",
+ "allocator-api2",
+]
 
 [[package]]
 name = "home"
@@ -1166,6 +1238,17 @@ dependencies = [
 ]
 
 [[package]]
+name = "proc-easy"
+version = "0.3.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "ea59c637cd0e6b71ae18e589854e9de9b7cb17fefdbf2047e42bd38e24285b19"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn 2.0.72",
+]
+
+[[package]]
 name = "proc-macro-crate"
 version = "1.3.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1354,6 +1437,26 @@ dependencies = [
 ]
 
 [[package]]
+name = "serde"
+version = "1.0.204"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "bc76f558e0cbb2a839d37354c575f1dc3fdc6546b5be373ba43d95f231bf7c12"
+dependencies = [
+ "serde_derive",
+]
+
+[[package]]
+name = "serde_derive"
+version = "1.0.204"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "e0cd7e117be63d3c3678776753929474f3b04a43a080c744d6b0ae2a8c28e222"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn 2.0.72",
+]
+
+[[package]]
 name = "shlex"
 version = "1.3.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1373,6 +1476,15 @@ name = "simd-adler32"
 version = "0.3.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "d66dc143e6b11c1eddc06d5c423cfc97062865baf299914ab64caa38182078fe"
+
+[[package]]
+name = "slab"
+version = "0.4.9"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "8f92a496fb766b417c996b9c5e57daf2f7ad3b0bebe1ccfca4856390e3d3bb67"
+dependencies = [
+ "autocfg",
+]
 
 [[package]]
 name = "slice-deque"
@@ -1475,6 +1587,12 @@ dependencies = [
 ]
 
 [[package]]
+name = "tiny-fn"
+version = "0.1.6"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "219331d5e8cc8377a282141509c21457a8b87937230fa4b8152d8857bfee2942"
+
+[[package]]
 name = "tinyvec"
 version = "1.8.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1560,6 +1678,8 @@ checksum = "0b928f33d975fc6ad9f86c8f283853ad26bdd5b10b7f1542aa2fa15e2289105a"
 name = "voxely_voxelchuk"
 version = "0.1.0"
 dependencies = [
+ "edict",
+ "glam",
  "retro-blit",
 ]
 
