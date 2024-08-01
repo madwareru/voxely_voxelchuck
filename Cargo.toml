@@ -5,5 +5,7 @@ edition = "2021"
 
 [dependencies]
 retro-blit = { git = "https://github.com/madwareru/retro-blit", version = "0.1.9" }
+print-hex-rs = { git = "https://github.com/madwareru/print-hex-rs", version = "0.1.0"}
 glam = "0.21"
 edict ="1.0.0-rc6"
+rayon = "1.10.0"

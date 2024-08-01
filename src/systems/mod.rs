@@ -2,6 +2,7 @@ use edict::world::World;
 use retro_blit::window::RetroBlitContext;
 
 pub mod rendering;
+pub mod logic;
 
 pub trait BaseSystem {
     fn run(&mut self, ctx: &mut RetroBlitContext, world: &mut World, dt: f32);

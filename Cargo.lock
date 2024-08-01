@@ -1238,6 +1238,11 @@ dependencies = [
 ]
 
 [[package]]
+name = "print-hex-rs"
+version = "0.1.0"
+source = "git+https://github.com/madwareru/print-hex-rs#57a50eac4f5445859afe0ef7de9b8ed71dcf06ad"
+
+[[package]]
 name = "proc-easy"
 version = "0.3.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1680,6 +1685,8 @@ version = "0.1.0"
 dependencies = [
  "edict",
  "glam",
+ "print-hex-rs",
+ "rayon",
  "retro-blit",
 ]
 
